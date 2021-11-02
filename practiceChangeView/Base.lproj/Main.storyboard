@@ -1,24 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HYu-fV-p7y">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="practiceChangeView" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iBi-xx-sca">
+                                <rect key="frame" x="175" y="432.5" width="64" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Modal"/>
+                                <connections>
+                                    <segue destination="5I3-AY-8xi" kind="popoverPresentation" popoverAnchorView="iBi-xx-sca" id="sJI-zK-PTb">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <constraints>
+                            <constraint firstItem="iBi-xx-sca" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ZIl-l0-WdQ"/>
+                            <constraint firstItem="iBi-xx-sca" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bk0-rf-hbk"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="ylW-n0-6Zb"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="939.13043478260875" y="51.5625"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="mzG-tU-UKb">
+            <objects>
+                <viewController id="5I3-AY-8xi" customClass="SecondViewController" customModule="practiceChangeView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aGq-ZF-jVz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NG0-Y5-ncp">
+                                <rect key="frame" x="291" y="40" width="83" height="83"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="NG0-Y5-ncp" secondAttribute="height" multiplier="1:1" id="tbD-e5-bfR"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="x.square.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="touchUpDismissButton:" destination="5I3-AY-8xi" eventType="touchUpInside" id="Bgh-mX-liq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xWA-wY-c1m"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <constraints>
+                            <constraint firstItem="NG0-Y5-ncp" firstAttribute="top" secondItem="xWA-wY-c1m" secondAttribute="top" constant="40" id="MpO-17-Qtf"/>
+                            <constraint firstItem="NG0-Y5-ncp" firstAttribute="width" secondItem="aGq-ZF-jVz" secondAttribute="width" multiplier="20%" id="ifE-oQ-ncr"/>
+                            <constraint firstItem="xWA-wY-c1m" firstAttribute="trailing" secondItem="NG0-Y5-ncp" secondAttribute="trailing" constant="40" id="tih-bl-RtT"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Zgb-Fx-oSR"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vxg-EM-mtA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1773.913043478261" y="51.5625"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="nWM-VC-6fC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HYu-fV-p7y" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QiW-O9-Fsh">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="h5E-qP-KNm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Di-VO-gjM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="28.985507246376812" y="51.5625"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="x.square.fill" catalog="system" width="128" height="114"/>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
